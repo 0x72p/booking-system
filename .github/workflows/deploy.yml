@@ -27,5 +27,5 @@ jobs:
         run: |
           pkill cloudflared || true
           nohup cloudflared tunnel --url http://localhost:5001 > /tmp/cloudflared.log 2>&1 &
-          sleep 5
-          cat /tmp/cloudflared.log
+          sleep 15
+          grep -o 'https://[a-zA-Z0-9.-]*trycloudflare.com' /tmp/cloudflared.log
