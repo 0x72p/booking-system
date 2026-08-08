@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Book an Appointment</title>
+    <style>
+        body { font-family: sans-serif; max-width: 500px; margin: 40px auto; padding: 0 20px; }
+        select, input, button { width: 100%; padding: 10px; margin: 8px 0; box-sizing: border-box; }
+        button { background: #222; color: white; border: none; cursor: pointer; }
+        #slots { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+        .slot { padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; cursor: pointer; }
+        .slot.selected { background: #222; color: white; }
+        #message { margin-top: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Book an Appointment</h1>
+
+    <label>Service</label>
+    <select id="service"></select>
+
+    <label>Date</label>
+    <input type="date" id="date">
+
+    <label>Available times</label>
+    <div id="slots"></div>
+
+    <label>Your name</label>
+    <input type="text" id="name">
+
+    <label>Your email</label>
+    <input type="email" id="email">
+
+    <button onclick="bookAppointment()">Book</button>
+    <div id="message"></div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
